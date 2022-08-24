@@ -1,6 +1,6 @@
 module redis_mate_go
 
-go 1.18
+go 1.19
 
 require (
 	github.com/beego/beego/v2 v2.0.5
@@ -20,6 +20,6 @@ require (
 	github.com/prometheus/common v0.37.0 // indirect
 	github.com/prometheus/procfs v0.8.0 // indirect
 	github.com/shiena/ansicolor v0.0.0-20200904210342-c7312218db18 // indirect
-	golang.org/x/sys v0.0.0-20220811171246-fbc7d0a398ab // indirect
+	golang.org/x/sys v0.0.0-20220823224334-20c2bfdbfe24 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
 )
