@@ -1,13 +1,13 @@
-FROM ttbb/base:go AS build
-COPY . /opt/sh/compile
-WORKDIR /opt/sh/compile/pkg
+FROM shoothzj/base:go AS build
+COPY . /opt
+WORKDIR /opt/pkg
 RUN go build -o redis_mate .
 
 
 FROM ttbb/redis:nake
 
-COPY docker-build /opt/sh/redis/mate
+COPY docker-build /opt/redis/mate
 
-COPY --from=build /opt/sh/compile/pkg/redis_mate /opt/sh/redis/mate/redis_mate
+COPY --from=build /opt/pkg/redis_mate /opt/redis/mate/redis_mate
 
-CMD ["/usr/bin/dumb-init", "bash", "-vx", "/opt/sh/redis/mate/scripts/start.sh"]
+CMD ["/usr/bin/dumb-init", "bash", "-vx", "/opt/redis/mate/scripts/start.sh"]
